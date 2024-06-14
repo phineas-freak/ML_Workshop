@@ -109,12 +109,12 @@ font: 22pt &quot;Microsoft Himalaya&quot;;</string>
     <string>Generate</string>
    </property>
   </widget>
-  <widget class="QLabel" name="full_name">
+  <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
      <x>80</x>
      <y>450</y>
-     <width>141</width>
+     <width>131</width>
      <height>41</height>
     </rect>
    </property>
@@ -124,6 +124,23 @@ font: 75 14pt &quot;Georgia&quot;;</string>
    </property>
    <property name="text">
     <string>Full Name: </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="full_name">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>440</y>
+     <width>321</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(85, 0, 255);
+font: 75 14pt &quot;Georgia&quot;;</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

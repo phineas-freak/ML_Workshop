@@ -45,10 +45,16 @@ class Ui_Form(object):
         self.generate_button.setStyleSheet("color:rgb(0, 0, 0);\n"
 "font: 22pt \"Microsoft Himalaya\";")
         self.generate_button.setObjectName("generate_button")
+        self.label_5 = QtWidgets.QLabel(Form)
+        self.label_5.setGeometry(QtCore.QRect(80, 450, 131, 41))
+        self.label_5.setStyleSheet("color:rgb(85, 0, 255);\n"
+"font: 75 14pt \"Georgia\";")
+        self.label_5.setObjectName("label_5")
         self.full_name = QtWidgets.QLabel(Form)
-        self.full_name.setGeometry(QtCore.QRect(80, 450, 141, 41))
+        self.full_name.setGeometry(QtCore.QRect(210, 440, 321, 51))
         self.full_name.setStyleSheet("color:rgb(85, 0, 255);\n"
 "font: 75 14pt \"Georgia\";")
+        self.full_name.setText("")
         self.full_name.setObjectName("full_name")
 
         self.retranslateUi(Form)
@@ -61,7 +67,7 @@ class Ui_Form(object):
         self.label_2.setText(_translate("Form", "Enter First Name : "))
         self.label_3.setText(_translate("Form", "Enter Last Name:"))
         self.generate_button.setText(_translate("Form", "Generate"))
-        self.full_name.setText(_translate("Form", "Full Name: "))
+        self.label_5.setText(_translate("Form", "Full Name: "))
 
 
 if __name__ == "__main__":
