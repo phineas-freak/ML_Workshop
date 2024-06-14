@@ -56,10 +56,20 @@ class Ui_Form(object):
 "font: 75 14pt \"Georgia\";")
         self.full_name.setText("")
         self.full_name.setObjectName("full_name")
-
+        
+        self.generate_button.clicked.connect(self.adding)
+        
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+        
+    def adding(self):
+        fn=self.first_name.text()
+        ln=self.last_name.text()
+        fullname=fn + " "+ ln
+        self.full_name.setText(fullname)
+        print("Button is pressed ")
+        
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
