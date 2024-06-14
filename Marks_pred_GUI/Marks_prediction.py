@@ -9,7 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import pandas as pd
+#import matplotlib.pyplot as plt
+from sklearn import linear_model
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -48,12 +50,18 @@ class Ui_Form(object):
         self.result.setObjectName("result")
         self.hours_ip = QtWidgets.QLineEdit(Form)
         self.hours_ip.setGeometry(QtCore.QRect(360, 160, 241, 41))
+        self.hours_ip.setStyleSheet("color:rgb(0, 0, 0);\n"
+"font: 22pt \"PMingLiU-ExtB\";")
         self.hours_ip.setObjectName("hours_ip")
         self.age_ip = QtWidgets.QLineEdit(Form)
         self.age_ip.setGeometry(QtCore.QRect(360, 230, 241, 41))
+        self.age_ip.setStyleSheet("color:rgb(0, 0, 0);\n"
+"font: 22pt \"PMingLiU-ExtB\";")
         self.age_ip.setObjectName("age_ip")
         self.internet_ip = QtWidgets.QLineEdit(Form)
         self.internet_ip.setGeometry(QtCore.QRect(360, 300, 241, 41))
+        self.internet_ip.setStyleSheet("color:rgb(0, 0, 0);\n"
+"font: 22pt \"PMingLiU-ExtB\";")
         self.internet_ip.setObjectName("internet_ip")
 
         self.retranslateUi(Form)
@@ -68,6 +76,32 @@ class Ui_Form(object):
         self.label_4.setText(_translate("Form", "Internet[0/1]"))
         self.button.setText(_translate("Form", "Predict"))
         self.result.setText(_translate("Form", "Result"))
+
+        self.button.clicked.connect(self.predict)
+
+    def predict(self):
+        Hours=(self.hours_ip.text())
+        Age=(self.age_ip.text())
+        Internet=(self.internet_ip.text())
+        
+        path = "C:\\Users\\rosha\\OneDrive\\Desktop\\code\\Workshop\\ML\\Data\\Data\\Exammarks.csv"
+        data=pd.read_csv(path)
+        
+
+        median_age=data.age.median()
+        data.age=data.age.fillna(median_age)
+        median_hours=data.hours.median()
+        data.hours=data.hours.fillna(median_hours)
+        median_internet=data.internet.median()
+        data.internet=data.internet.fillna(median_internet)
+        input=data.drop('marks',axis='columns')
+        output=data.drop(['hours','age','internet'],axis='columns')
+        reg=linear_model.LinearRegression()
+        reg.fit(input,output)
+        result=reg.predict([[float(Hours),int(Age),int(Internet)]])
+        self.result.setText("Marks Predicted: "+str(result[0][0]))
+        print(str(result[0][0]))
+
 
 
 if __name__ == "__main__":

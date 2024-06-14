@@ -125,6 +125,10 @@ font: 20pt &quot;Poor Richard&quot;;</string>
      <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(0, 0, 0);
+font: 22pt &quot;PMingLiU-ExtB&quot;;</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="age_ip">
    <property name="geometry">
@@ -135,6 +139,10 @@ font: 20pt &quot;Poor Richard&quot;;</string>
      <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(0, 0, 0);
+font: 22pt &quot;PMingLiU-ExtB&quot;;</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="internet_ip">
    <property name="geometry">
@@ -144,6 +152,10 @@ font: 20pt &quot;Poor Richard&quot;;</string>
      <width>241</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(0, 0, 0);
+font: 22pt &quot;PMingLiU-ExtB&quot;;</string>
    </property>
   </widget>
  </widget>
